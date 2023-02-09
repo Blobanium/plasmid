@@ -58,7 +58,6 @@ public final class GameCommand {
         dispatcher.register(
             literal("game")
                 .then(literal("open")
-                    .requires(source -> source.hasPermissionLevel(2))
                     .then(GameConfigArgument.argument("game_config")
                         .executes(GameCommand::openGame)
                     )
